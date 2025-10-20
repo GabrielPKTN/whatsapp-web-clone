@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+.menu-lateral {
+    background-color: black;
+    width: 40px;
+    height: 100%;
+}
+
+.menu-lateral ol{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-lateral li {
+    margin-top: 5px;
+}
+
+.icon-menu-lateral {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.5%;
+    width: 90%;
+    border-radius: 50%;
+    color: transparent;
+    cursor: pointer;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: white;
+}
+
+.icon-menu-lateral:hover {
+    -webkit-text-stroke-color: rgb(82, 235, 82);
+    background-color: rgb(29, 29, 29);
+}
+
+.profile-img {
+    display: flex;
+    border-radius: 50%;
+    width: 80%;
+    height: 35%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-img  img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.container-config-user {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.engrenagem {
+    font-size: 20px;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.meta img {
+    object-fit: cover;
+    width: 80%;
+}
+
+.groups {
+    margin-bottom: 5px;
+} 
