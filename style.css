@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --main-font: "Rubik", sans-serif;
+    --chat-font: "Nunito Sans", sans-serif;
+}
+
 body {
     display: flex;
     width: 100dvw;
@@ -11,54 +16,48 @@ body {
 }
 
 .menu-lateral {
+
     background-color: black;
     width: 40px;
     height: 100%;
-}
 
-.menu-lateral ol{
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    ol {
 
-.menu-lateral li {
-    margin-top: 5px;
-}
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-.icon-menu-lateral {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 4.5%;
-    width: 90%;
-    border-radius: 50%;
-    color: transparent;
-    cursor: pointer;
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: white;
-}
+        .meta img {
+            object-fit: cover;
+            width: 80%;
+        }
 
-.icon-menu-lateral:hover {
-    -webkit-text-stroke-color: rgb(82, 235, 82);
-    background-color: rgb(29, 29, 29);
-}
+        .groups {
+            margin-bottom: 5px;
+        } 
 
-.profile-img {
-    display: flex;
-    border-radius: 50%;
-    width: 80%;
-    height: 35%;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-}
+        .icon-menu-lateral {
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 4.5%;
+            width: 90%;
+            border-radius: 50%;
+            color: transparent;
+            cursor: pointer;
+            -webkit-text-stroke-width: 0.5px;
+            -webkit-text-stroke-color: white;
+        }
 
-.profile-img  img{
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
+        .icon-menu-lateral:hover {
+            -webkit-text-stroke-color: rgb(82, 235, 82);
+            background-color: rgb(29, 29, 29);
+        }
+
+    }
+
 }
 
 .container-config-user {
@@ -67,20 +66,178 @@ body {
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
+
+    .profile-img {
+        display: flex;
+        border-radius: 50%;
+        width: 80%;
+        height: 35%;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+
+    .engrenagem {
+        font-size: 20px;
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: white;
+    }
+
 }
 
-.engrenagem {
-    font-size: 20px;
-    color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
+.conversas {
+
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    height: 100%;
+    padding: 1rem;
+    padding-bottom: 0px;
+
+    .container-header-conversas {
+        width: auto;
+        padding-bottom: 20px;
+
+        .container-input {
+            width: auto;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            
+            input {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                border-bottom: green solid 2px;
+                padding-left: 10px;
+                padding-right: 15px;
+                color: white;
+            }
+
+            input::-webkit-input-placeholder {
+                color: grey;
+            }
+
+            .lupa {
+                margin-left: 90%;
+                position: absolute;
+                z-index: 2;
+                color: rgb(235, 235, 235);
+            }
+
+        }
+
+        .container-header-info {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+
+            span {
+                padding: 10px;
+                font-family: var(--main-font);
+                font-weight: 400;
+                font-size: 20px;
+            }
+
+            .container-icons-header-info {
+                padding-right: 10px;
+                display: flex;
+                gap: 10px;
+            }
+
+        }
+
+    }
+
+    .container-conversas {
+        background-color: tomato;
+        width: 20vw;
+        height: 100%;
+        overflow-y: auto;
+        scrollbar-color: black;
+
+        .container-conversa {
+            transition: transform 0.3s ease-in-out;
+            width: 100%;
+            height: auto;
+            padding: 5px;
+            display: flex;
+            border-radius: 10px;
+
+            .container-profile-img {
+                width: 3.5rem;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+
+                img {
+                    border-radius: 50%;
+                    width: 100%;
+                    object-fit: contain;
+                }
+
+            }
+
+            .container-info-contato {
+                padding-left: 10px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                font-family: var(--chat-font);
+
+                .name-hour {
+                    display: flex;
+                    align-items: center;
+                    padding-right: 10px;
+                    width: 100%;
+                    justify-content: space-between;
+                    font-weight: 800;
+
+                    p {
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+
+                }
+
+                .last-message {
+                    font-size: 12px;
+                }
+
+            }
+
+        }
+
+        .container-conversa:hover {
+            background-color: rgba(128, 128, 128, 0.658);
+            transform: scale(1.03);
+        }
+
+    }
+
+    .container-conversas::-webkit-scrollbar-track {
+        background: rgb(0, 0, 0);
+        
+    }
+
 }
 
-.meta img {
-    object-fit: cover;
-    width: 80%;
-}
 
-.groups {
-    margin-bottom: 5px;
-} 
