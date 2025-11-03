@@ -282,3 +282,78 @@ body {
     }
 
 }
+
+main {
+
+    background-image: url(./img/tawseem-hakak-2vJRHQkbFV0-unsplash.jpg);
+    background-size: cover;
+
+
+    width: 100%;
+
+    .chat {
+
+        display: flex;
+        align-items: center;
+
+        height: 8%;
+        width: 100%;
+
+        background-color: var(--secondary-color);
+
+        .chat-header {
+
+            width: 100%;
+
+            display: flex;
+
+            margin-inline: 30px;
+
+            justify-content: space-between;
+            align-items: center;
+
+            .icons-call {
+                color: white;
+                display: flex;
+                
+                font-size: 20px;
+
+                gap: 20px;
+
+            }
+
+            .container-contato {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                gap: 10px;
+
+                .container-foto-contato {
+                    background-color: tomato;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+
+                    img {
+                        width: 100%;
+                        border-radius: 50%;
+                    }
+
+                }
+
+                .contato-nome {
+                    font-family: var(--main-font);
+                    color: white;
+                    
+                }
+
+            }
+
+
+        }
+
+    }
+
+}
