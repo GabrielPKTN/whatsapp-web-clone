@@ -304,6 +304,8 @@ main {
 
         .chat-header {
 
+            z-index: 1;
+
             background-color: var(--secondary-color);
             padding: 20px;
 
@@ -355,7 +357,6 @@ main {
 
             }
 
-
         }
 
         .chat-messages {
@@ -371,22 +372,29 @@ main {
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            overflow: hidden;
 
-            overflow-y: scroll;
+            .container-messages {
+                display: flex;
+                flex-direction: column;
+                padding-top: 10px;
+                height: 100%;
+                position: absolute;
+                overflow: auto;
 
-            &&::-webkit-scrollbar {
-                width: 5px;
-            }
-        
-            &&::-webkit-scrollbar-track {
-                background: transparent;
-                
-            }
-        
-            &&::-webkit-scrollbar-thumb {
-                background-color: blue;
-                border-radius: 5px;
+                &&::-webkit-scrollbar {
+                    width: 5px;
+                }
+            
+                &&::-webkit-scrollbar-track {
+                    background: transparent;
+                    
+                }
+            
+                &&::-webkit-scrollbar-thumb {
+                    background-color: var(--secondary-color);
+                    border-radius: 5px;
+                }
+
             }
 
             .container-messages-user {
@@ -407,6 +415,8 @@ main {
                         font-family: var(--chat-font);
                         color: white;
                         position: relative;
+                        font-size: 12px;
+                        text-align: justify;
 
                         &&:before {
                             content: "";
@@ -444,6 +454,7 @@ main {
                         font-family: var(--chat-font);
                         color: white;
                         position: relative;
+                        font-size: 12px;
 
                         &&:before {
                             content: "";
@@ -476,7 +487,7 @@ main {
 
             .input {
                 width: 100%;
-                height: 100%;
+                height: 90%;
                 padding-inline: 15px;
 
                 display: flex;
@@ -501,6 +512,8 @@ main {
 
                     width: 90%;
                     height: 90%;
+
+                    padding-left: 10px;
 
                     color: white;
 
