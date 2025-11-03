@@ -11,6 +11,8 @@
     --secondary-color: #1D1F1F;
     --primary-color: #161717;
 
+    --user-message: #005E4C;
+
     --border-color: #343636;
 
     --font-color: #ABACAC;
@@ -294,14 +296,16 @@ main {
     .chat {
 
         display: flex;
+        flex-direction: column;
         align-items: center;
 
-        height: 8%;
+        height: 100%;
         width: 100%;
 
-        background-color: var(--secondary-color);
-
         .chat-header {
+
+            background-color: var(--secondary-color);
+            padding: 20px;
 
             width: 100%;
 
@@ -354,6 +358,157 @@ main {
 
         }
 
-    }
+        .chat-messages {
+            width: 100%;
+            height: 85%;
 
+            gap: 20px;
+
+            padding-left: 5px;
+
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            overflow: hidden;
+
+            overflow-y: scroll;
+
+            &&::-webkit-scrollbar {
+                width: 5px;
+            }
+        
+            &&::-webkit-scrollbar-track {
+                background: transparent;
+                
+            }
+        
+            &&::-webkit-scrollbar-thumb {
+                background-color: blue;
+                border-radius: 5px;
+            }
+
+            .container-messages-user {
+                width: 100%;
+                height: auto;
+
+                display: flex;
+                justify-content: flex-end;
+
+                .container-message-user {
+                    width: 45%;
+                    margin-right: 10px;
+
+                    p {
+                        background-color: var(--user-message);
+                        padding: 8px;
+                        border-radius: 5px;
+                        font-family: var(--chat-font);
+                        color: white;
+                        position: relative;
+
+                        &&:before {
+                            content: "";
+                            position: absolute;
+                            width: 0; 
+                            height: 0; 
+                            border-top: 0 solid transparent;
+                            border-bottom: 15px solid transparent;
+                            border-left: 15px solid var(--user-message);
+                            right: -10px;
+                            top: 0px;
+                            
+                        }
+                    }
+
+                }
+
+            }
+
+            .container-messages-contact {
+
+                width: 100%;
+                height: auto;
+
+                display: flex;
+
+                .container-message-contact {
+                    width: 45%;
+                    margin-left: 10px;
+
+                    p {
+                        background-color: var(--border-color);
+                        padding: 8px;
+                        border-radius: 5px;
+                        font-family: var(--chat-font);
+                        color: white;
+                        position: relative;
+
+                        &&:before {
+                            content: "";
+                            position: absolute;
+                            width: 0; 
+                            height: 0; 
+                            border-top: 0px solid transparent;
+                            border-bottom: 15px solid transparent; 
+                            border-right: 15px solid var(--border-color); 
+                            left: -10px;
+                            top: 0px;
+                            
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+        .input-messages {
+            padding-top: 5px;
+            width: 90%;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .input {
+                width: 100%;
+                height: 100%;
+                padding-inline: 15px;
+
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 40px;
+
+                color: white;
+
+                background-color: #1D1F1F;
+
+
+                .icons-left {
+                    display: flex;
+                    gap: 10px;
+                }
+
+                input {
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+
+                    width: 90%;
+                    height: 90%;
+
+                    color: white;
+
+                    &&::placeholder {
+                        color: var(--font-color);
+                    }
+                }
+            }
+        }
+    }
 }
