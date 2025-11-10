@@ -255,8 +255,17 @@ body {
                 }
 
                 .last-message {
+                    
                     color: var(--font-color);
                     font-size: 12px;
+
+                    p {
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+
+                        width: 40ch;
+                    }
                 }
 
             }
